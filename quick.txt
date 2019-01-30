@@ -1,0 +1,20 @@
+Take an array as input
+quick sort(array, low index, high index)
+   if low index is less than high index
+      pivot index is output of the function partition
+      quick sort(array, low index, pivot - 1 index)
+      quick sort(array, pivot + 1  index, high index)
+   return array
+
+partition (array, low index, high index) 
+        pivot becomes array(high);
+        i becomes low-1
+        j becomes low
+        if j is less than high - 1
+            if array(j) is less than or equal to pivot
+                increment in i by 1
+                swap array(i) by array(j)
+            increment in j by 1
+            go to step 13
+        swap array(i + 1) by array(high)
+        return i+1 

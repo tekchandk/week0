@@ -1,0 +1,34 @@
+Take an array as input
+merge sort (array, left index, right index)
+   if left index is less than right index
+      median index = (left index + right index) /2
+      right index becomes median index
+      go to step 2
+      left index becomes median index + 1
+      go to step 2
+      go to step 11
+
+merge (array, left index, median index, right index)
+size of left array (n1) will be (median - left +1)
+size of right array (n2) will be (right - median)
+left array becomes left to median index's elemnts of the array
+right array becomes  median + 1 to right index's elemnts of the array
+      
+if i is less than n1 and j is less than n2
+    if left array(i) is less than right array(j)
+        array(k) becomes left(i)
+        increment in i and k by 1
+    else
+        array(k) becomes right(j)
+        increment in j and k by 1
+    go to step 17
+if i is less than n1
+   array(k) becomes left array(i)
+   increment in i and k by 1
+   go to step 25
+
+if j is less than n2
+   array(k) becomes right array(j)
+   increment in j and k by 1
+   go to step 30
+get sorted array

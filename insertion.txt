@@ -1,0 +1,11 @@
+Take an array as input
+Look at  array, i is the index of the array
+     if key value <- array(i)
+     j <- i - 1
+     if j greater than and equal to 0 and array(i) is greater than key value
+        array(j + 1) becomes array(j)
+        j becomes j-1
+        go to step 5
+     array(j + 1) becomes key value
+go to step 2
+get sorted array
