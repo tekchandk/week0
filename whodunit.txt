@@ -1,0 +1,33 @@
+In main function
+infile = large.bmp
+outfile = new_image.bmp
+Open infile to read
+if infile doesn't exist 
+    Display could not open
+Open outile to read
+if outfile doesn't exist 
+    Display could not create
+take input factor in the range (0.0...100.0]
+Read BITMAPFILEHEADER bf of infile
+Read BITMAPINFOHEADER bi of infile
+if infile type is not BM or the offsets in bits is not 54 or the size is not 40 bytes or file is compressed
+    Close the outfile
+    Close the infile
+    Display unsupported file format
+padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4
+Write outfile's BITMAPFILEHEADER
+Write outfile's BITMAPINFOHEADER
+for i=0, i < biHeight,i++
+        for j = 0, j < biHeight, j++
+            read RGBTRIPLE from infile
+            if ((triple.rgbtRed == 255 and triple.rgbtGreen == 255 and triple.rgbtBlue == 255) || triple.rgbtRed == 255)
+                triple.rgbtRed = 255;
+                triple.rgbtGreen = 0;
+                triple.rgbtBlue = 255;
+            write RGB triple to outfile
+        for k = 0, k < padding_n, k++
+            Add a new padding   
+    skip over padding if any
+close the infile 
+close the outfile
+            

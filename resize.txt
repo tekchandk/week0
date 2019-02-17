@@ -1,0 +1,36 @@
+In main function
+infile = large.bmp
+outfile = new_image_resize.bmp
+Open infile to read
+if infile doesn't exist 
+    Display could not open
+Open outile to read
+if outfile doesn't exist 
+    Display could not create
+take input factor in the range (0.0...100.0]
+Read BITMAPFILEHEADER bf of infile
+Read BITMAPINFOHEADER bi of infile
+if infile type is not BM or the offsets in bits is not 54 or the size is not 40 bytes or file is compressed
+    Close the outfile
+    Close the infile
+    Display unsupported file format
+new width = old width * factor
+new height = old height * factor
+old_padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4
+new_padding = (4 - (bi_n.biWidth * sizeof(RGBTRIPLE)) %4) % 4
+new_bi.biSizeImage = (bi_n.biWidth * sizeof(RGBTRIPLE) + padding_n) * abs(bi_n.biHeight)
+New_bf.bfSize = bf.bfSize - bi.biSizeImage + bi_n.biSizeImage
+Write outfile's BITMAPFILEHEADER
+Write outfile's BITMAPINFOHEADER
+for i=0, i < biHeight,i++
+    for j=0, j < factor, j++
+        for k=0, k < factor, k++
+        read RGBTRIPLE from infile
+        for l = 0; l < factor; l++
+            write RGB triple to outfile
+        for k = 0, k < padding_n, k++
+            Add a new padding   
+    skip over padding if any
+close the infile 
+close the outfile
+            
